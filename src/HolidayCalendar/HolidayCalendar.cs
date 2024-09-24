@@ -4,15 +4,26 @@ using System.Collections;
 namespace HolidayCalendar;
 public class HolidayCalendar : IHolidayCalendar
 {
-  public bool IsHoliday(DateTime date)
+  private IExternalHolidayApi _externalHolidayApi;
+
+  public HolidayCalendar()
   {
-    // TODO - replace the below exception with your own implementation
-    throw new NotImplementedException();
+    _externalHolidayApi = new ExternalHolidayApi();
+  }
+
+  public bool IsHoliday(DateTime date)
+  { 
+    return _externalHolidayApi.IsHoliday(date);
   }
 
   public ICollection<DateTime> GetHolidays(DateTime startDate, DateTime endDate)
   {
-    // TODO - replace the below exception with your own implementation
-    throw new NotImplementedException();
+    var holidays = _externalHolidayApi.GetHolidays(startDate, endDate);
+    var holidayDates = new List<DateTime>();
+    foreach (var holiday in holidays)
+    {
+      if (holiday.nationalHoliday) holidayDates.Add(DateTime.Parse(holiday.date));
+    }
+    return holidayDates;
   }
 }
