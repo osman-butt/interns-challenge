@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8FB2DF5A-09CD-414E-8666-5F339400FBF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayCalendar", "src\HolidayCalendar\HolidayCalendar.csproj", "{46B45524-8A50-4A0F-8E34-EA1399185A0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8556B764-7C18-4D22-9E3F-896E96A3BB5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayCalendar.Tests", "tests\HolidayCalendar.Tests\HolidayCalendar.Tests.csproj", "{468F011B-F89B-43EA-BC99-2BE62531558C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46B45524-8A50-4A0F-8E34-EA1399185A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46B45524-8A50-4A0F-8E34-EA1399185A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46B45524-8A50-4A0F-8E34-EA1399185A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46B45524-8A50-4A0F-8E34-EA1399185A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{468F011B-F89B-43EA-BC99-2BE62531558C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{468F011B-F89B-43EA-BC99-2BE62531558C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{468F011B-F89B-43EA-BC99-2BE62531558C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{468F011B-F89B-43EA-BC99-2BE62531558C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{46B45524-8A50-4A0F-8E34-EA1399185A0C} = {8FB2DF5A-09CD-414E-8666-5F339400FBF5}
+		{468F011B-F89B-43EA-BC99-2BE62531558C} = {8556B764-7C18-4D22-9E3F-896E96A3BB5E}
+	EndGlobalSection
+EndGlobal
