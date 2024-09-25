@@ -1,5 +1,5 @@
 import { HolidayType } from "../types";
-import { API_TOKEN, API_URL } from "../../Settings";
+import { API_TOKEN, API_URL } from "../../settings";
 
 const HOLIDAY_ENDPOINT = "/holidays";
 const TOKEN = API_TOKEN;
