@@ -3,7 +3,7 @@ import useSixMonthsDates from "../hooks/useSixMonthDates";
 import CalendarSixMonths from "./ui/CalendarSixMonths";
 
 export default function Calendar() {
-  const startDate = new Date("2024-12-01");
+  const startDate = new Date("2024-01-01");
 
   // Show half year calendar, eg. Jan-Jun or Jul-Dec
   if (startDate.getMonth() < 6) {
