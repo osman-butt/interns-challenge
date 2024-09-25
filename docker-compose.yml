@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
     environment:
-      SALLING_GROUP_API_TOKEN: ${SALLING_GROUP_API_TOKEN}
+      SALLING_GROUP_API_TOKEN: ${VITE_SALLING_GROUP_API_TOKEN}
     ports:
       - "8080:8080"
     networks:
