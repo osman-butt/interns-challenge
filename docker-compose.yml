@@ -1,0 +1,30 @@
+services:
+  holidayapi:
+    build:
+      context: ./api
+      dockerfile: HolidayApi/Dockerfile
+    env_file:
+      - .env
+    environment:
+      SALLING_GROUP_API_TOKEN: ${SALLING_GROUP_API_TOKEN}
+    ports:
+      - "8080:8080"
+    networks:
+      - techchapternet
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_SALLING_GROUP_API_TOKEN: ${VITE_SALLING_GROUP_API_TOKEN}
+        VITE_SALLING_GROUP_API_URL: ${VITE_SALLING_GROUP_API_URL}
+    container_name: frontend-container
+    networks:
+      - techchapternet
+    ports:
+      - "80:80"
+
+networks:
+  techchapternet:
+    driver: bridge
