@@ -1,12 +1,20 @@
 using HolidayApi.Interfaces;
 using HolidayApi.Services;
-using System.Linq;
+using System.Net.Http;
 
 namespace HolidayApi.tests;
 
 public class HolidayServiceTest
 {
-    private readonly IHolidayService fixture = new HolidayService();
+
+    private IHolidayService fixture;
+
+    [SetUp]
+    public void Setup()
+    {
+        HttpClient client = new HttpClient();
+        fixture = new HolidayService(client);
+    }
 
     [Test]
     public async Task GIVEN_XmasDay_WHEN_IsHoliday_THEN_return_true()
