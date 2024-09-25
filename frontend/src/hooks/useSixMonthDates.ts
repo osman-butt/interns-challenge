@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 const MONTHS = [
   "Januar",
   "Februar",
@@ -37,26 +39,29 @@ const generateMonthDates = (year: number, month: number): Date[] => {
 const useSixMonthsDates = (
   startDate: Date = new Date()
 ): { dates: Date[][]; displayMonths: string[] } => {
-  const dates: Date[][] = [];
-  const indexStart = startDate.getMonth();
+  return useMemo(() => {
+    const dates: Date[][] = [];
+    const indexStart = startDate.getMonth();
+    let year = startDate.getFullYear();
 
-  // Generate dates for the six months
-  for (let i = 0; i < 6; i++) {
-    const month = (indexStart + i) % 12;
-    // IF January is contained later than index 0, then we need to add 1 to the year
-    if (month === 0 && i > 0) {
-      startDate.setFullYear(startDate.getFullYear() + 1);
+    // Generate dates for the six months
+    for (let i = 0; i < 6; i++) {
+      const month = (indexStart + i) % 12;
+      // IF January is contained later than index 0, then we need to add 1 to the year
+      if (month === 0 && i > 0) {
+        year++;
+      }
+      dates.push(generateMonthDates(year, month));
     }
-    dates.push(generateMonthDates(startDate.getFullYear(), month));
-  }
 
-  // Get display month names for the six months
-  const displayMonths = MONTHS.slice(indexStart, indexStart + 6)
-    .concat(MONTHS)
-    .slice(0, 6);
-  console.log(displayMonths);
+    // Get display month names for the six months
+    const displayMonths = MONTHS.slice(indexStart, indexStart + 6)
+      .concat(MONTHS)
+      .slice(0, 6);
+    console.log(displayMonths);
 
-  return { dates, displayMonths };
+    return { dates, displayMonths };
+  }, [startDate]);
 };
 
 export default useSixMonthsDates;
