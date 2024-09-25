@@ -28,7 +28,7 @@ namespace HolidayApi.Services
             if (!response.IsSuccessStatusCode)
             {
                 // Handle error response here if needed (e.g., throw an exception or return false)
-                return false;
+                throw new ArgumentException("Service unavailable!");
             }
             var content = await response.Content.ReadAsStringAsync();
 

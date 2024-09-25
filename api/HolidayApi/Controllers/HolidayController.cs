@@ -21,7 +21,7 @@ namespace HolidayApi.Controllers
                 var isHoliday = await _holidayService.IsHoliday(date);
                 return Ok(isHoliday);
             }
-            catch (ArgumentException ex)
+            catch (Exception ex)
             {
                 var errorResponse = new ErrorResponse
                 {
